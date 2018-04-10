@@ -1,0 +1,28 @@
+server:
+  port: 8000
+
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: chang
+    password: zhangxin
+    publisher-confirms: true
+    virtual-host: chang
+
+rabbit:
+  queue:
+    name: chang-queue
+  topic:
+    exchange: amq.topic
+    routeKey: chang-queue
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["*"]
+  endpoint:
+    shutdown:
+      enabled: true
+

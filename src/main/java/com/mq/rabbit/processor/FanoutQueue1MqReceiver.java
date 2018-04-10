@@ -1,0 +1,21 @@
+package com.mq.rabbit.processor;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.rabbit.annotation.RabbitHandler;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.stereotype.Component;
+
+/**
+ * @author Mr.Chang
+ * @create 2018-04-10 10:33
+ **/
+@Slf4j
+@Component
+@RabbitListener(queues = "chang-queue-1")
+public class FanoutQueue1MqReceiver{
+
+    @RabbitHandler
+    public void receive(String msg){
+        log.info("chang-queue-1接收消息：{}",msg);
+    }
+}
