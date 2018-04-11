@@ -9,4 +9,5 @@ public class ChangRabbitmqApplication {
     public static void main(String[] args) {
         SpringApplication.run(ChangRabbitmqApplication.class, args);
     }
+
 }
